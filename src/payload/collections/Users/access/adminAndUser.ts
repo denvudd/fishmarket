@@ -2,7 +2,7 @@ import type { Access } from 'payload/types'
 
 import { checkRole } from '../checkRole'
 
-const adminsAndUser: Access = ({ req: { user } }) => {
+export const adminsAndUser: Access = ({ req: { user } }) => {
   if (user) {
     if (checkRole(['admin'], user)) {
       return true
@@ -17,5 +17,3 @@ const adminsAndUser: Access = ({ req: { user } }) => {
 
   return false
 }
-
-export default adminsAndUser
